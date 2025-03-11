@@ -1,41 +1,46 @@
 import { Tabs } from "expo-router";
 import React from "react";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { useTheme } from "@react-navigation/native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { colors } = useTheme();
 
   return (
     <Tabs
-      screenOptions={{
+      screenOptions={({ route }) => ({
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
-      }}
+        tabBarHideOnKeyboard: true,
+      })}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Login",
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-              name={focused ? "home" : "home-outline"} // ✅ Smooth switch
+              name="login"
               size={24}
-              color={color}
+              color={focused ? "black" : "gray"}
             />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="profile"
+        name="register"
         options={{
-          title: "Profile",
+          title: "Register",
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-              name={focused ? "account" : "account-outline"} // ✅ True filled vs outline
+              name={focused ? "account-plus" : "account-plus-outline"}
               size={24}
-              color={color}
+              color={focused ? "black" : "gray"}
             />
           ),
         }}
