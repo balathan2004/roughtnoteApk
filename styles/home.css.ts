@@ -9,9 +9,8 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   card: {
-    paddingVertical: 50,
+    paddingVertical: 20,
     paddingHorizontal: 5,
-    width: "100%",
   },
   card_docname: {
     fontSize: 20,

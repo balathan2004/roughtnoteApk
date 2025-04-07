@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     position: "relative",
     justifyContent: "flex-start",
-    // Keeps the snackbar positioned correctly within the container
   },
   snackbarContainer: {
     position: "absolute",
@@ -24,7 +23,7 @@ export const styles = StyleSheet.create({
   },
 
   container: {
-    display: "flex",
+    flex:1,
     flexDirection: "column",
     alignItems: "center",
     width: "90%",

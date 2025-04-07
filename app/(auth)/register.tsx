@@ -52,7 +52,7 @@ const SignUp: FC = () => {
 
     setLoading(true);
 
-    const response = await fetch(`${serverUrl}/auth/register`, {
+    const response = await fetch(`${serverUrl}/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

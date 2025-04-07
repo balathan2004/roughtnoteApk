@@ -19,6 +19,9 @@ import ReplyPopUp from "@/components/elements/replyPopup";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 import { styles } from "@/styles/global.css";
+import NewtworkWrapper from "@/components/context/network_wrapper";
+import DocDataHolder from "@/components/context/doc_wrapper";
+import ContextWrapper from "@/components/context/context_wrapper";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -40,32 +43,45 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <PaperProvider>
+    <PaperProvider>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <SafeAreaView style={styles.safearea}>
-          <UserContextHolder>
-            <ReplyHolder>
-              <LoadingHolder>
-                <ReplyPopUp />
-                <LoadingProgress />
-                <Stack>
-                  <Stack.Screen
-                    name="(auth)"
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name="(tabs)"
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen name="+not-found" />
-                  <Stack.Screen name="index" options={{ headerShown: false }} />
-                </Stack>
-              </LoadingHolder>
-            </ReplyHolder>
-          </UserContextHolder>
+          <NewtworkWrapper>
+            <UserContextHolder>
+              <DocDataHolder>
+                <ReplyHolder>
+                  <LoadingHolder>
+                    <ReplyPopUp />
+                    <LoadingProgress />
+                    <ContextWrapper>
+                      <Stack>
+                        <Stack.Screen
+                          name="(auth)"
+                          options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                          name="(tabs)"
+                          options={{ headerShown: false }}
+                        />
+                        <Stack.Screen name="+not-found" />
+                        <Stack.Screen
+                          name="index"
+                          options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                          name="(notes)"
+                          options={{ headerShown: false }}
+                        />
+                      </Stack>
+                    </ContextWrapper>
+                  </LoadingHolder>
+                </ReplyHolder>
+              </DocDataHolder>
+            </UserContextHolder>
+          </NewtworkWrapper>
           <StatusBar style="auto" />
         </SafeAreaView>
-      </PaperProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </PaperProvider>
   );
 }

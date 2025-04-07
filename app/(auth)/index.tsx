@@ -59,7 +59,7 @@ const Login: FC = () => {
   const submitForm = async () => {
     if (userData.email && userData.password) {
       setLoading(true);
-      const response = await fetch(`${serverUrl}/auth/login`, {
+      const response = await fetch(`${serverUrl}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
