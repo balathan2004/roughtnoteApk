@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# Rough Note (Mobile)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Rough Note is a minimal mobile app built with Expo for capturing and managing your thoughts on the go. Designed for speed, simplicity, and sync — your notes are always with you.
 
-## Get started
+## Tech Stack
 
-1. Install dependencies
+- **React Native**
+- **Expo**
+- **TypeScript**
+- **Firebase Auth**
+- **Firestore**
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- **Create Notes** – Write and save notes from your mobile device.  
+- **Sync in Real-Time** – All notes are synced with Firestore across devices.  
+- **Secure Sign-In** – Authenticate easily with Firebase Authentication.  
+- **Offline Support** – View cached notes even without an internet connection.  
 
-   ```bash
-    npx expo start
-   ```
+## How It Works
 
-In the output, you'll find options to open the app in a
+1. **Log In** using your email to access your notes.  
+2. **Write a Note** from your mobile and it syncs automatically.  
+3. **Edit or Delete** your notes — changes reflect in real-time.  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## About
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Dev:** Light  
+- **LinkedIn:** [Link to LinkedIn](https://www.linkedin.com/in/balathan2004/)  
 
-## Get a fresh project
+Rough Note Mobile is the perfect companion for quick thoughts and mobile productivity — syncs seamlessly with the web version.
 
-When you're ready, run:
+## License
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is licensed under the **MIT License**.
